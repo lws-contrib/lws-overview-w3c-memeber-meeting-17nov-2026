@@ -177,4 +177,4 @@ W3C Member meeting · 17 Nov 2026
 - Repo & issues: <https://github.com/w3c/lws-protocol>
 - Implementations: [Implementations.md](https://github.com/w3c/lws-protocol/blob/main/Implementations.md) — signal interest via PR
 - Test suite: <https://github.com/lws-contrib/lws-test-suite>
-- Hot right now: [#309](https://github.com/w3c/lws-protocol/issues/309) LDP alignment · [#303](https://github.com/w3c/lws-protocol/issues/303) ODRL access profile · [#291](https://github.com/w3c/lws-protocol/issues/291) version discovery · [#308](https://github.com/w3c/lws-protocol/issues/308) OIDC `aud`
+- Hot right now: [#309](https://github.com/w3c/lws-protocol/issues/309) LDP alignment · [#303](https://github.com/w3c/lws-protocol/issues/303) ODRL access profile · [#291](https://github.com/w3c/lws-protocol/issues/291) version discovery
