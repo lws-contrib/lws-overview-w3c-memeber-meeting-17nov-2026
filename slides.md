@@ -154,7 +154,7 @@ W3C Member meeting · 17 Nov 2026
 
 <!-- _class: dense -->
 
-# Structures used
+# Data structures used
 
 <!--n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-storage-wg-charter.html#out-of-scope)-->
 
