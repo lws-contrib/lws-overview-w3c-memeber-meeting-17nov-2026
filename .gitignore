@@ -1,0 +1,5 @@
+node_modules/
+dist/
+slides.txt
+.DS_Store
+*~

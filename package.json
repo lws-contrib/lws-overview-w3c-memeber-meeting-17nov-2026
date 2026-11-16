@@ -1,0 +1,14 @@
+{
+  "name": "lws-overview-w3c-memeber-meeting-17nov-2026",
+  "private": true,
+  "description": "Slides: W3C Linked Web Storage WG overview, W3C Member meeting 17 Nov 2026",
+  "scripts": {
+    "preview": "marp --no-stdin --theme-set themes -s .",
+    "build": "marp --no-stdin --theme-set themes --html slides.md -o dist/index.html",
+    "pdf": "marp --no-stdin --theme-set themes --pdf --allow-local-files slides.md -o dist/slides.pdf",
+    "png": "marp --no-stdin --theme-set themes --images png --allow-local-files slides.md -o dist/slide.png"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.2"
+  }
+}
