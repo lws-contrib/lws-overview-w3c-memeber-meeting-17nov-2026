@@ -109,7 +109,7 @@ W3C Member meeting · 17 Nov 2026
 
 <!-- _class: dense -->
 
-# Ruled in / out / possible
+# Scope: ruled in / out
 
 - **In**
   - Core storage protocol: containers, CRUD, discovery, metadata, pagination
