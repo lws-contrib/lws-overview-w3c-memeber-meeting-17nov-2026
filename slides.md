@@ -121,11 +121,13 @@ W3C Member meeting · 17 Nov 2026
   - "a unique and exclusive solution for Personal Data Stores"
   - New identity mechanisms; new data formats
   - Authorization-server ↔ storage-server interaction; a mandated access-policy language
+<!--
 - **Possible / under discussion**
   - HTTP Streaming notification suite (draft [PR #284](https://github.com/w3c/lws-protocol/pull/284))
   - Web-CID agent identification profile ([#96](https://github.com/w3c/lws-protocol/pull/96)); FedCM integration ([#279](https://github.com/w3c/lws-protocol/issues/279))
   - Auxiliary resources & manifest ([#113](https://github.com/w3c/lws-protocol/pull/113)); schema integration ([#294](https://github.com/w3c/lws-protocol/issues/294))
   - Protocol version discovery ([#291](https://github.com/w3c/lws-protocol/issues/291)); Solid migration Note ([#66](https://github.com/w3c/lws-protocol/issues/66))
+-->
 
 ---
 
