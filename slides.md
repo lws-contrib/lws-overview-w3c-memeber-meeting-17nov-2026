@@ -87,6 +87,28 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
 
 <!-- _class: dense -->
 
+# Relationship to LDP
+
+- LWS CRUD is semantically LDP CRUD ([#309](https://github.com/w3c/lws-protocol/issues/309), prompted by TAG charter review)
+  - POST-to-container, server-minted URIs, [atomic containment](https://www.w3.org/TR/lws10-core/#containment-integrity)
+  - GET/HEAD with ETag + Link; server-managed containment; opaque URIs
+- **Our container subtype**
+  - Proposal: `lws:Container` ⊑ `ldp:BasicContainer`, `lws:items` → `ldp:contains` in the JSON-LD context
+  - Zero cost to JSON developers; LDP/Solid/Fedora tools can read LWS containers
+  - `lws:DataResource` ⊑ `ldp:Resource` (not `ldp:NonRDFSource` — it may be RDF)
+- **Other gaps** @@feedback welcome@@ (from #309 discussion, still being enumerated)
+  - LDP requires `text/turtle` — LWS is JSON-first (Turtle via profile)
+  - `ldp:constrainedBy` link on errors — compatible, could be added (raised on #309, 16 Nov)
+  - [Paging](https://www.w3.org/TR/lws10-core/#pagination): LWS uses `first`/`next`/`prev`/`last` link rels (vs. LDP Paging Note)
+  - `describedby` / linkset metadata vs. LDP's optional `describedby`
+- **Problem details**
+  - [Errors](https://www.w3.org/TR/lws10-core/#summary-of-http-status-mappings) may use RFC 9457 `application/problem+json` (400 SHOULD; 401/403/404 MAY)
+  - Open question: does `ldp:constrainedBy` complement or duplicate problem+json?
+
+---
+
+<!-- _class: dense -->
+
 # Ruled in / out / possible
 
 - **In**
@@ -145,28 +167,6 @@ n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-s
 - **IETF building blocks**: OAuth 2.0 (RFC 6749), Protected Resource Metadata (RFC 9728), Web Linking (RFC 8288), Linksets (RFC 9264), Problem Details (RFC 9457)
 - Vocabularies reused: ODRL, Dublin Core (`dcterms:format`, `modified`), schema.org (`schema:size`, `schema:expires`), `ldp:inbox`
 - Trend: removing the WG's own media types ([#267](https://github.com/w3c/lws-protocol/issues/267), [#276](https://github.com/w3c/lws-protocol/issues/276))
-
----
-
-<!-- _class: dense -->
-
-# Relationship to LDP
-
-- LWS CRUD is semantically LDP CRUD ([#309](https://github.com/w3c/lws-protocol/issues/309), prompted by TAG charter review)
-  - POST-to-container, server-minted URIs, [atomic containment](https://www.w3.org/TR/lws10-core/#containment-integrity)
-  - GET/HEAD with ETag + Link; server-managed containment; opaque URIs
-- **Our container subtype**
-  - Proposal: `lws:Container` ⊑ `ldp:BasicContainer`, `lws:items` → `ldp:contains` in the JSON-LD context
-  - Zero cost to JSON developers; LDP/Solid/Fedora tools can read LWS containers
-  - `lws:DataResource` ⊑ `ldp:Resource` (not `ldp:NonRDFSource` — it may be RDF)
-- **Other gaps** @@feedback welcome@@ (from #309 discussion, still being enumerated)
-  - LDP requires `text/turtle` — LWS is JSON-first (Turtle via profile)
-  - `ldp:constrainedBy` link on errors — compatible, could be added (raised on #309, 16 Nov)
-  - [Paging](https://www.w3.org/TR/lws10-core/#pagination): LWS uses `first`/`next`/`prev`/`last` link rels (vs. LDP Paging Note)
-  - `describedby` / linkset metadata vs. LDP's optional `describedby`
-- **Problem details**
-  - [Errors](https://www.w3.org/TR/lws10-core/#summary-of-http-status-mappings) may use RFC 9457 `application/problem+json` (400 SHOULD; 401/403/404 MAY)
-  - Open question: does `ldp:constrainedBy` complement or duplicate problem+json?
 
 ---
 
