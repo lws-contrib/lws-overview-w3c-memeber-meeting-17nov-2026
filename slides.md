@@ -156,19 +156,19 @@ W3C Member meeting · 17 Nov 2026
 
 # Structures used
 
-n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-storage-wg-charter.html#out-of-scope)
+<!--n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-storage-wg-charter.html#out-of-scope)-->
 
 - **CID** (Controlled Identifiers 1.0)
   - [Storage description](https://www.w3.org/TR/lws10-core/#storage-description-data-model) = CID document + LWS vocabulary
-  - [PR #306](https://github.com/w3c/lws-protocol/pull/306): drop `application/lws+cid` → plain `application/cid`
+  <!--- [PR #306](https://github.com/w3c/lws-protocol/pull/306): drop `application/lws+cid` → plain `application/cid`-->
   - SSI-CID auth suite (covers did:key); webhook signing keys as CID verification methods
 - **Activity Streams 2.0**: [notification envelope](https://www.w3.org/TR/lws10-core/#notification-data-model) wraps an AS2 `Create` / `Update` / `Delete` / `Move`
 - **JSON-LD with a [profile](https://www.w3.org/TR/lws10-core/#lws-profile)**
-  - [PR #307](https://github.com/w3c/lws-protocol/pull/307): `application/lws+json` → `application/ld+json; profile="https://www.w3.org/ns/lws/v1"`
+  <!--- [PR #307](https://github.com/w3c/lws-protocol/pull/307): `application/lws+json` → `application/ld+json; profile="https://www.w3.org/ns/lws/v1"`-->
   - Any RDF syntax (Turtle, TriG, N-Triples…) via [conneg](https://www.w3.org/TR/lws10-core/#content-negotiation) if RDF-isomorphic to the profile
 - **IETF building blocks**: OAuth 2.0 (RFC 6749), Protected Resource Metadata (RFC 9728), Web Linking (RFC 8288), Linksets (RFC 9264), Problem Details (RFC 9457)
 - Vocabularies reused: ODRL, Dublin Core (`dcterms:format`, `modified`), schema.org (`schema:size`, `schema:expires`), `ldp:inbox`
-- Trend: removing the WG's own media types ([#267](https://github.com/w3c/lws-protocol/issues/267), [#276](https://github.com/w3c/lws-protocol/issues/276))
+<!--- Trend: removing the WG's own media types ([#267](https://github.com/w3c/lws-protocol/issues/267), [#276](https://github.com/w3c/lws-protocol/issues/276))-->
 
 ---
 
