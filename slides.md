@@ -72,8 +72,8 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
   - Solid Protocol 0.11 (CG report) is a charter *input*, not the output
   - Normative deps not Rec-track ready (WebID, Solid-OIDC, WAC/ACP, Solid Notifications)
 - The WG re-specifies the needed parts on Rec-track foundations
-  - WebID + Solid-OIDC → pluggable authn suites + OAuth 2.0 profile
-  - WAC/ACP → resource manager + access requests/grants (access policy language left open)
+  - WebID + Solid-OIDC → CID + pluggable authn suites + OAuth 2.0 profile
+  - WAC/ACP → ODRL Access Profile (plus new access requests/grants)
   - Turtle-first → **dual-access JSON-LD**: one document read as plain JSON *or* as RDF
     - other RDF syntaxes (Turtle, N-Triples…) via profile conneg, RDF-isomorphic
 - Continuity: spec acknowledges Solid authors; Solid compatibility/migration Note planned ([#66](https://github.com/w3c/lws-protocol/issues/66))
