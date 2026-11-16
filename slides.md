@@ -148,7 +148,7 @@ W3C Member meeting · 17 Nov 2026
   - Core: `NotificationService` [discovery](https://www.w3.org/TR/lws10-core/#notification-discovery), [subscription model](https://www.w3.org/TR/lws10-core/#subscriptions), [notification data model](https://www.w3.org/TR/lws10-core/#notification-data-model)
   - Delivery suites: [Webhooks](https://w3c.github.io/lws-protocol/lws10-notifications-webhook/); HTTP Streaming (draft)
 - Index: search & type index services ([`lws10-index`](https://w3c.github.io/lws-protocol/lws10-index/))
-- Same-origin services may reuse the storage's access token ([PR #305](https://github.com/w3c/lws-protocol/pull/305))
+<!--- Same-origin services may reuse the storage's access token ([PR #305](https://github.com/w3c/lws-protocol/pull/305))-->
 
 ---
 
