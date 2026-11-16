@@ -10,6 +10,7 @@ written in [Marp](https://marp.app/) Markdown with a small W3C-flavoured theme.
 
 ```sh
 npm install
+# edit slides.md
 npm run preview   # live-reloading server
 npm run build     # dist/index.html
 npm run pdf       # dist/slides.pdf

@@ -66,7 +66,7 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
 
 ---
 
-# Why not Solid?
+# Relationship to Solid
 
 - Solid is incubation — needs standardization
   - Solid Protocol 0.11 (CG report) is a charter *input*, not the output
@@ -74,7 +74,8 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
 - The WG re-specifies the needed parts on Rec-track foundations
   - WebID + Solid-OIDC → pluggable authn suites + OAuth 2.0 profile
   - WAC/ACP → resource manager + access requests/grants (access policy language left open)
-  - Turtle-first → JSON(-LD)-first, RDF via profile
+  - Turtle-first → **dual-access JSON-LD**: one document read as plain JSON *or* as RDF
+    - other RDF syntaxes (Turtle, N-Triples…) via profile conneg, RDF-isomorphic
 - Continuity: spec acknowledges Solid authors; Solid compatibility/migration Note planned ([#66](https://github.com/w3c/lws-protocol/issues/66))
 - Community Solid Server is also an LWS implementation
 
@@ -154,7 +155,7 @@ n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-s
   - Proposal: `lws:Container` ⊑ `ldp:BasicContainer`, `lws:items` → `ldp:contains` in the JSON-LD context
   - Zero cost to JSON developers; LDP/Solid/Fedora tools can read LWS containers
   - `lws:DataResource` ⊑ `ldp:Resource` (not `ldp:NonRDFSource` — it may be RDF)
-- **Other gaps** @@ (from #309 discussion, still being enumerated — chairs: add/confirm)
+- **Other gaps** @@feedback welcome@@ (from #309 discussion, still being enumerated)
   - LDP requires `text/turtle` — LWS is JSON-first (Turtle via profile)
   - `ldp:constrainedBy` link on errors — compatible, could be added (raised on #309, 16 Nov)
   - Paging: LWS uses `first`/`next`/`prev`/`last` link rels (vs. LDP Paging Note)
@@ -165,7 +166,7 @@ n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-s
 
 ---
 
-# Get involved
+# Obligatory "Get involved" slide
 
 - Repo & issues: <https://github.com/w3c/lws-protocol>
 - Implementations: [Implementations.md](https://github.com/w3c/lws-protocol/blob/main/Implementations.md) — signal interest via PR
