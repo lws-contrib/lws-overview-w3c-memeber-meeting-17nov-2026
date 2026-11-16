@@ -15,7 +15,7 @@ footer: 'W3C LWS WG · Member meeting · 17 Nov 2026'
 
 ## status & direction
 
-W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
+W3C Member meeting · 17 Nov 2026
 
 - Specs: <https://github.com/w3c/lws-protocol>
 - Latest core WD: <https://www.w3.org/TR/2026/WD-lws10-core-20261109/>
