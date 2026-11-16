@@ -18,7 +18,7 @@ footer: 'W3C LWS WG · Member meeting · 17 Nov 2026'
 W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
 
 - Specs: <https://github.com/w3c/lws-protocol>
-- Latest core WD: <https://www.w3.org/TR/2026/WD-lws10-core-20261023/>
+- Latest core WD: <https://www.w3.org/TR/2026/WD-lws10-core-20261109/>
 
 ---
 
@@ -35,15 +35,15 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
 
 # Brief high-level tech
 
-- HTTP resources in a containment hierarchy: storage root → containers → data resources
-  - CRUD via HTTP; containment via `rel="up"` links + container listing (`items`)
-  - URIs are opaque: hierarchy is metadata, not path structure
-- Storage description (a CID document) advertises the root and services
-  - discovered from any resource via `Link: <…>; rel="https://www.w3.org/ns/lws#storage"`
-- Authentication: pluggable suites (OpenID Connect, SAML 2.0, self-signed CID)
-- Authorization: OAuth 2.0 profile; `401` + RFC 9728 Protected Resource Metadata → token for the storage
-- Metadata: linkset auxiliary resources (RFC 9264)
-- Optional services: notifications, access requests/grants, search & type index
+- HTTP resources in a [containment hierarchy](https://www.w3.org/TR/lws10-core/#logical-resource-organization): storage root → containers → data resources
+  - CRUD via HTTP; containment via `rel="up"` links + [container listing](https://www.w3.org/TR/lws10-core/#container-representation) (`items`)
+  - URIs are opaque: hierarchy is metadata, not path structure ([§](https://www.w3.org/TR/lws10-core/#resource-identification-0))
+- [Storage description](https://www.w3.org/TR/lws10-core/#storage-description) (a CID document) advertises the root and services
+  - discovered from any resource via `Link: <…>; rel="https://www.w3.org/ns/lws#storage"` ([§](https://www.w3.org/TR/lws10-core/#storage-description-binding))
+- [Authentication](https://www.w3.org/TR/lws10-core/#authentication): pluggable suites ([OpenID Connect](https://www.w3.org/TR/lws10-authn-openid/), [SAML 2.0](https://www.w3.org/TR/lws10-authn-saml/), [self-signed CID](https://www.w3.org/TR/lws10-authn-ssi-cid/))
+- [Authorization](https://www.w3.org/TR/lws10-core/#authorization): OAuth 2.0 profile; `401` + RFC 9728 [Protected Resource Metadata](https://www.w3.org/TR/lws10-core/#protected-resource-metadata) → token for the storage
+- [Metadata](https://www.w3.org/TR/lws10-core/#metadata): linkset auxiliary resources (RFC 9264)
+- Optional services: [notifications](https://www.w3.org/TR/lws10-core/#notifications), [access requests/grants](https://www.w3.org/TR/lws10-core/#access-requests-and-grants), [search & type index](https://w3c.github.io/lws-protocol/lws10-index/)
 
 ---
 
@@ -55,7 +55,7 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
   - chairs: Aaron Coburn, Laurens Debackere, Eric Prud'hommeaux; staff contact: Pierre-Antoine Champin
 - Charter plan vs. actual
   - FPWD planned 2025-03 — core FPWD 2026-03-31; auth suites FPWD 2026-04-23
-  - CR planned 2026-03, Rec 2026-09 — core now at WD (2026-10-23)
+  - CR planned 2026-03, Rec 2026-09 — core now at WD (2026-11-09)
 - Other publications
   - Vocabulary: Group Note Draft 2026-07-14
   - did:key auth suite: Discontinued Draft 2026-09-29 — subsumed by SSI-CID (a did:key *is* a CID; [#141](https://github.com/w3c/lws-protocol/issues/141), [PR #229](https://github.com/w3c/lws-protocol/pull/229))
@@ -66,16 +66,20 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
 
 ---
 
+<!-- _class: dense -->
+
 # Relationship to Solid
 
 - Solid is incubation — needs standardization
-  - Solid Protocol 0.11 (CG report) is a charter *input*, not the output
+  - [Solid Protocol 0.11](https://solidproject.org/TR/2024/protocol-20240512) (CG report) is a charter *input*, not the output
   - Normative deps not Rec-track ready (WebID, Solid-OIDC, WAC/ACP, Solid Notifications)
 - The WG re-specifies the needed parts on Rec-track foundations
   - WebID + Solid-OIDC → CID + pluggable authn suites + OAuth 2.0 profile
-  - WAC/ACP → ODRL Access Profile (plus new access requests/grants à la [SAI](https://sai.js.org/))
+  - WAC/ACP → [ODRL Access Profile](https://www.w3.org/TR/lws10-core/#access-profile) (plus new access requests/grants à la [SAI](https://sai.js.org/))
   - Turtle-first → **dual-access JSON-LD**: one document read as plain JSON *or* as RDF
-    - other RDF syntaxes (Turtle, N-Triples…) via profile conneg, RDF-isomorphic
+    - other RDF syntaxes (Turtle, N-Triples…) via [profile conneg](https://www.w3.org/TR/lws10-core/#content-negotiation), RDF-isomorphic
+  - Solid Notifications → [LWS notifications](https://www.w3.org/TR/lws10-core/#notifications): same pattern (POST `type` + `topic` to a [subscription service](https://www.w3.org/TR/lws10-core/#subscriptions); [AS2 activities](https://www.w3.org/TR/lws10-core/#notification-data-model))
+    - channels become separate suites: [webhook](https://w3c.github.io/lws-protocol/lws10-notifications-webhook/), HTTP streaming ([PR #284](https://github.com/w3c/lws-protocol/pull/284)); `Move` added
 - Continuity: spec acknowledges Solid authors; Solid compatibility/migration Note planned ([#66](https://github.com/w3c/lws-protocol/issues/66))
 - Community Solid Server is also an LWS implementation
 
@@ -110,16 +114,16 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
 - Core (`lws10-core`) + suites as separate documents
   - Orthogonality concern raised ([#178](https://github.com/w3c/lws-protocol/issues/178), citing WebArch §5.1)
   - → OAuth profile being extracted from core into its own spec ([PR #299](https://github.com/w3c/lws-protocol/pull/299))
-- Authentication suites: OpenID Connect, SAML 2.0, SSI-CID (did:key folded in)
-- **Access**
-  - Requests: agent POSTs an access request to an `AccessRequestService`
-  - Grants: storage controller issues an access grant via `AccessGrantService`
+- Authentication suites: [OpenID Connect](https://www.w3.org/TR/lws10-authn-openid/), [SAML 2.0](https://www.w3.org/TR/lws10-authn-saml/), [SSI-CID](https://www.w3.org/TR/lws10-authn-ssi-cid/) (did:key folded in)
+- **[Access](https://www.w3.org/TR/lws10-core/#access-requests-and-grants)**
+  - Requests: agent POSTs an access request to an [`AccessRequestService`](https://www.w3.org/TR/lws10-core/#access-request-endpoint)
+  - Grants: storage controller issues an access grant via [`AccessGrantService`](https://www.w3.org/TR/lws10-core/#access-grant-endpoint)
     - a grant is a *record*, not a token — server adjusts its own policy
-    - access profile drawn from ODRL (actions, constraints, assignees) ([#303](https://github.com/w3c/lws-protocol/issues/303))
-- **Notifications**
-  - Core: `NotificationService` discovery, subscription model, notification data model
-  - Delivery suites: Webhooks (`lws10-notifications-webhook`); HTTP Streaming (draft)
-- Index: search & type index services (`lws10-index`)
+    - [access profile](https://www.w3.org/TR/lws10-core/#access-profile) drawn from ODRL (actions, constraints, assignees) ([#303](https://github.com/w3c/lws-protocol/issues/303))
+- **[Notifications](https://www.w3.org/TR/lws10-core/#notifications)**
+  - Core: `NotificationService` [discovery](https://www.w3.org/TR/lws10-core/#notification-discovery), [subscription model](https://www.w3.org/TR/lws10-core/#subscriptions), [notification data model](https://www.w3.org/TR/lws10-core/#notification-data-model)
+  - Delivery suites: [Webhooks](https://w3c.github.io/lws-protocol/lws10-notifications-webhook/); HTTP Streaming (draft)
+- Index: search & type index services ([`lws10-index`](https://w3c.github.io/lws-protocol/lws10-index/))
 - Same-origin services may reuse the storage's access token ([PR #305](https://github.com/w3c/lws-protocol/pull/305))
 
 ---
@@ -131,15 +135,15 @@ W3C Member meeting · 17 Nov 2026 · 16:00–17:00 EST
 n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-storage-wg-charter.html#out-of-scope)
 
 - **CID** (Controlled Identifiers 1.0)
-  - Storage description = CID document + LWS vocabulary
+  - [Storage description](https://www.w3.org/TR/lws10-core/#storage-description-data-model) = CID document + LWS vocabulary
   - [PR #306](https://github.com/w3c/lws-protocol/pull/306): drop `application/lws+cid` → plain `application/cid`
   - SSI-CID auth suite (covers did:key); webhook signing keys as CID verification methods
-- **Activity Streams 2.0**: notification envelope wraps an AS2 `Create` / `Update` / `Delete` / `Move`
-- **JSON-LD with a profile**
+- **Activity Streams 2.0**: [notification envelope](https://www.w3.org/TR/lws10-core/#notification-data-model) wraps an AS2 `Create` / `Update` / `Delete` / `Move`
+- **JSON-LD with a [profile](https://www.w3.org/TR/lws10-core/#lws-profile)**
   - [PR #307](https://github.com/w3c/lws-protocol/pull/307): `application/lws+json` → `application/ld+json; profile="https://www.w3.org/ns/lws/v1"`
-  - Any RDF syntax (Turtle, TriG, N-Triples…) if RDF-isomorphic to the profile
+  - Any RDF syntax (Turtle, TriG, N-Triples…) via [conneg](https://www.w3.org/TR/lws10-core/#content-negotiation) if RDF-isomorphic to the profile
 - **IETF building blocks**: OAuth 2.0 (RFC 6749), Protected Resource Metadata (RFC 9728), Web Linking (RFC 8288), Linksets (RFC 9264), Problem Details (RFC 9457)
-- Vocabularies reused: ODRL, Dublin Core, schema.org, `ldp:inbox`
+- Vocabularies reused: ODRL, Dublin Core (`dcterms:format`, `modified`), schema.org (`schema:size`, `schema:expires`), `ldp:inbox`
 - Trend: removing the WG's own media types ([#267](https://github.com/w3c/lws-protocol/issues/267), [#276](https://github.com/w3c/lws-protocol/issues/276))
 
 ---
@@ -149,7 +153,7 @@ n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-s
 # Relationship to LDP
 
 - LWS CRUD is semantically LDP CRUD ([#309](https://github.com/w3c/lws-protocol/issues/309), prompted by TAG charter review)
-  - POST-to-container, server-minted URIs, atomic containment
+  - POST-to-container, server-minted URIs, [atomic containment](https://www.w3.org/TR/lws10-core/#containment-integrity)
   - GET/HEAD with ETag + Link; server-managed containment; opaque URIs
 - **Our container subtype**
   - Proposal: `lws:Container` ⊑ `ldp:BasicContainer`, `lws:items` → `ldp:contains` in the JSON-LD context
@@ -158,10 +162,10 @@ n.b. new data formats are [out of scope](https://www.w3.org/2024/09/linked-web-s
 - **Other gaps** @@feedback welcome@@ (from #309 discussion, still being enumerated)
   - LDP requires `text/turtle` — LWS is JSON-first (Turtle via profile)
   - `ldp:constrainedBy` link on errors — compatible, could be added (raised on #309, 16 Nov)
-  - Paging: LWS uses `first`/`next`/`prev`/`last` link rels (vs. LDP Paging Note)
+  - [Paging](https://www.w3.org/TR/lws10-core/#pagination): LWS uses `first`/`next`/`prev`/`last` link rels (vs. LDP Paging Note)
   - `describedby` / linkset metadata vs. LDP's optional `describedby`
 - **Problem details**
-  - Errors may use RFC 9457 `application/problem+json` (400 SHOULD; 401/403/404 MAY)
+  - [Errors](https://www.w3.org/TR/lws10-core/#summary-of-http-status-mappings) may use RFC 9457 `application/problem+json` (400 SHOULD; 401/403/404 MAY)
   - Open question: does `ldp:constrainedBy` complement or duplicate problem+json?
 
 ---
