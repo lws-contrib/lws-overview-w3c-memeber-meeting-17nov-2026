@@ -101,7 +101,7 @@ W3C Member meeting · 17 Nov 2026
 
 # Charter vote
 
-* AC review runs through Dec 9
-* Draft charter: https://w3c.github.io/lws-wg-charter/
-* Charter vote: https://www.w3.org/wbs/33280/lws-charter-2026/
+- AC review runs through Dec 9
+- Draft charter: https://w3c.github.io/lws-wg-charter/
+- Charter vote: https://www.w3.org/wbs/33280/lws-charter-2026/
 
