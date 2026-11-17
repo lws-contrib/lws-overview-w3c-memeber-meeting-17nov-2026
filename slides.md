@@ -22,7 +22,7 @@ W3C Member meeting · 17 Nov 2026
 
 ---
 
-# High-level goals / rationale
+# Goals
 
 - Privacy
 - User control of personal data
@@ -39,7 +39,7 @@ W3C Member meeting · 17 Nov 2026
 
 ---
 
-# Brief high-level tech
+# Technology stack
 
 - HTTP resources in a containment hierarchy
 - Data and service discovery
