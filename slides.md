@@ -54,12 +54,11 @@ W3C Member meeting · 17 Nov 2026
 
 - Solid is incubation — needs standardization
   - [Solid Protocol 0.11](https://solidproject.org/TR/2024/protocol-20240512) (CG report) is a charter *input*, not the output
-  - Normative deps not Rec-track ready (WebID, Solid-OIDC, WAC/ACP, Solid Notifications)
 - Placing the necessary components on Rec-track foundations
   - Identity and authentication → CID + pluggable authn suites
   - Authorization and sharing → [ODRL Access Profile](https://www.w3.org/TR/lws10-core/#access-profile)
   - Developer-friendly interoperability via JSON-LD based data model
-- Community Solid Server is also an LWS implementation
+- Community Solid Server (branch) is also an experimental LWS implementation
 
 ---
 
@@ -102,4 +101,5 @@ W3C Member meeting · 17 Nov 2026
 - AC review runs through Dec 9
 - Draft charter: https://w3c.github.io/lws-wg-charter/
 - Charter vote: https://www.w3.org/wbs/33280/lws-charter-2026/
+
 
