@@ -52,8 +52,7 @@ W3C Member meeting · 17 Nov 2026
 
 # Relationship to Solid
 
-- Solid is incubation — needs standardization
-  - [Solid Protocol 0.11](https://solidproject.org/TR/2024/protocol-20240512) (CG report) is a charter *input*, not the output
+- [Solid Protocol 0.11](https://solidproject.org/TR/2024/protocol-20240512) (CG report) is a charter *input*, not the output
 - Placing the necessary components on Rec-track foundations
   - Identity and authentication → CID + pluggable authn suites
   - Authorization and sharing → [ODRL Access Profile](https://www.w3.org/TR/lws10-core/#access-profile)
