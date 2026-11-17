@@ -49,7 +49,6 @@ W3C Member meeting · 17 Nov 2026
 
 ---
 
-<!-- _class: dense -->
 
 # Relationship to Solid
 
@@ -64,7 +63,6 @@ W3C Member meeting · 17 Nov 2026
 
 ---
 
-<!-- _class: dense -->
 
 # Relationship to LDP
 
@@ -75,7 +73,6 @@ W3C Member meeting · 17 Nov 2026
 
 ---
 
-<!-- _class: dense -->
 
 # Out of scope
 
