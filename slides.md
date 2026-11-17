@@ -98,3 +98,13 @@ W3C Member meeting · 17 Nov 2026
 - **IETF building blocks**: OAuth 2.0 (RFC 6749), Protected Resource Metadata (RFC 9728), Web Linking (RFC 8288), Linksets (RFC 9264), Problem Details (RFC 9457)
 - **Vocabularies**: ODRL, Dublin Core, LDP, schema.org
 
+---
+
+<!-- _class: dense -->
+
+# Charter vote
+
+* AC review runs through Dec 9
+* Draft charter: https://w3c.github.io/lws-wg-charter/
+* Charter vote: https://www.w3.org/wbs/33280/lws-charter-2026/
+
