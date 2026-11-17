@@ -95,12 +95,6 @@ W3C Member meeting · 17 Nov 2026
 - **Activity Streams 2.0**: [notification envelope](https://www.w3.org/TR/lws10-core/#notification-data-model) wraps an AS2 `Create` / `Update` / `Delete` / `Move`
 - **JSON-LD with a [profile](https://www.w3.org/TR/lws10-core/#lws-profile)**
   - Container data model
-
-- **IETF building blocks**
-  - OAuth 2.0 (RFC 6749)
-  - Protected Resource Metadata (RFC 9728)
-  - Web Linking (RFC 8288)
-  - Linksets (RFC 9264)
-  - Problem Details (RFC 9457)
+- **IETF building blocks**: OAuth 2.0 (RFC 6749), Protected Resource Metadata (RFC 9728), Web Linking (RFC 8288), Linksets (RFC 9264), Problem Details (RFC 9457)
 - Vocabularies reused: ODRL, Dublin Core (`dcterms:format`, `modified`), schema.org (`schema:size`, `schema:expires`), `ldp:inbox`
 
