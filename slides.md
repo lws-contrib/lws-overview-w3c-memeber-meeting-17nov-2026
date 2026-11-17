@@ -93,6 +93,18 @@ W3C Member meeting · 17 Nov 2026
 - **IETF building blocks**: OAuth 2.0 (RFC 6749), Protected Resource Metadata (RFC 9728), Web Linking (RFC 8288), Linksets (RFC 9264), Problem Details (RFC 9457)
 - **Vocabularies**: ODRL, Dublin Core, LDP, schema.org
 
+
+---
+
+
+# Deliverables and implementations
+
+- 7 server implementations, 2 client implementations
+- Working test suite
+- CR by Q2 2027
+- REC by Q2 2028
+
+
 ---
 
 
