@@ -82,7 +82,6 @@ W3C Member meeting · 17 Nov 2026
 
 ---
 
-<!-- _class: dense -->
 
 # Data structures
 
@@ -97,7 +96,6 @@ W3C Member meeting · 17 Nov 2026
 
 ---
 
-<!-- _class: dense -->
 
 # Charter vote
 
